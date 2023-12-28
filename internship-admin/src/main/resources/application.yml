@@ -1,7 +1,7 @@
 # 项目相关配置
 ruoyi:
   # 名称
-  name: RuoYi
+  name: Heroxin
   # 版本
   version: 3.8.6
   # 版权年份
@@ -36,7 +36,7 @@ server:
 # 日志配置
 logging:
   level:
-    com.ruoyi: debug
+    com.heroxin: debug
     org.springframework: warn
 
 # 用户配置

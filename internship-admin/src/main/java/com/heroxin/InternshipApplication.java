@@ -1,6 +1,5 @@
 package com.heroxin;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
@@ -15,17 +14,16 @@ public class InternshipApplication
 {
     public static void main(String[] args)
     {
-        // System.setProperty("spring.devtools.restart.enabled", "false");
         SpringApplication.run(InternshipApplication.class, args);
-        System.out.println("(♥◠‿◠)ﾉﾞ  若依启动成功   ლ(´ڡ`ლ)ﾞ  \n" +
-                " .-------.       ____     __        \n" +
-                " |  _ _   \\      \\   \\   /  /    \n" +
-                " | ( ' )  |       \\  _. /  '       \n" +
-                " |(_ o _) /        _( )_ .'         \n" +
-                " | (_,_).' __  ___(_ o _)'          \n" +
-                " |  |\\ \\  |  ||   |(_,_)'         \n" +
-                " |  | \\ `'   /|   `-'  /           \n" +
-                " |  |  \\    /  \\      /           \n" +
-                " ''-'   `'-'    `-..-'              ");
+        System.out.println("" +
+                " ____  ____                                 _            \n" +
+                "|_   ||   _|                               (_)           \n" +
+                "  | |__| |  .---.  _ .--.   .--.   _   __  __   _ .--.   \n" +
+                "  |  __  | / /__\\\\[ `/'`\\]/ .'`\\ \\[ \\ [  ][  | [ `.-. |  \n" +
+                " _| |  | |_| \\__., | |    | \\__. | > '  <  | |  | | | |  \n" +
+                "|____||____|'.__.'[___]    '.__.' [__]`\\_][___][___||__] \n" +
+                "保定学院 数据科学与软件工程学院 2020级 软件工程一班 李鑫 2005024116 \n" +
+                "                                          (某学院顶岗实习管理系统)"
+        );
     }
 }

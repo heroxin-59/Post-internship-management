@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	
-    <groupId>com.ruoyi</groupId>
-    <artifactId>ruoyi</artifactId>
-    <version>3.8.6</version>
+    <groupId>com.heroxin</groupId>
+    <artifactId>internship</artifactId>
+    <version>1.0.0</version>
 
     <name>Post-internship-management</name>
     <url>http://www.ruoyi.vip</url>
     <description>某学院顶岗实习管理系统</description>
     
     <properties>
-        <ruoyi.version>3.8.6</ruoyi.version>
+        <heroxin.version>1.0.0</heroxin.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -137,37 +137,37 @@
 
             <!-- 定时任务-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-quartz</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.heroxin</groupId>
+                <artifactId>internship-quartz</artifactId>
+                <version>${heroxin.version}</version>
             </dependency>
 
             <!-- 代码生成-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-generator</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.heroxin</groupId>
+                <artifactId>internship-generator</artifactId>
+                <version>${heroxin.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-framework</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.heroxin</groupId>
+                <artifactId>internship-framework</artifactId>
+                <version>${heroxin.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-system</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.heroxin</groupId>
+                <artifactId>internship-system</artifactId>
+                <version>${heroxin.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common</artifactId>
-                <version>${ruoyi.version}</version>
+                <groupId>com.heroxin</groupId>
+                <artifactId>internship-common</artifactId>
+                <version>${heroxin.version}</version>
             </dependency>
 
         </dependencies>

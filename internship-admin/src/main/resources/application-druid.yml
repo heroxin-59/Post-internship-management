@@ -6,16 +6,16 @@ spring:
         druid:
             # 主库数据源
             master:
-                url: jdbc:mysql://localhost:3306/ry-vue
+                url: jdbc:mysql://localhost:3306/post_internship_management_system
                 username: root
                 password: heroxin
             # 从库数据源
             slave:
                 # 从数据源开关/默认关闭
                 enabled: false
-                url: 
-                username: 
-                password: 
+                url: jdbc:mysql://localhost:3306/ry_vue
+                username: root
+                password: heroxin
             # 初始连接数
             initialSize: 5
             # 最小连接池数量

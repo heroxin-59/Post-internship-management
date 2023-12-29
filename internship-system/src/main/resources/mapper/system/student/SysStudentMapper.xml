@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heroxin.system.mapper.student.SysStudentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.heroxin.system.domain.student.SysStudent">
+        <id column="student_id" property="studentId" />
+        <result column="student_name" property="studentName" />
+        <result column="student_age" property="studentAge" />
+        <result column="student_hobby" property="studentHobby" />
+        <result column="student_sex" property="studentSex" />
+        <result column="student_status" property="studentStatus" />
+        <result column="student_birthday" property="studentBirthday" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        student_id, student_name, student_age, student_hobby, student_sex, student_status, student_birthday
+    </sql>
+
+</mapper>

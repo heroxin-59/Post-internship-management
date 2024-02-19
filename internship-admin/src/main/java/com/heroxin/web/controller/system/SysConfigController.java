@@ -19,8 +19,8 @@ import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.page.TableDataInfo;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.poi.ExcelUtil;
-import com.heroxin.system.domain.SysConfig;
-import com.heroxin.system.service.ISysConfigService;
+import com.heroxin.system.domain.sys.SysConfig;
+import com.heroxin.system.service.sys.ISysConfigService;
 
 /**
  * 参数配置 信息操作处理

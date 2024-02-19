@@ -15,7 +15,7 @@ import com.heroxin.common.core.domain.model.LoginBody;
 import com.heroxin.common.utils.SecurityUtils;
 import com.heroxin.framework.web.service.SysLoginService;
 import com.heroxin.framework.web.service.SysPermissionService;
-import com.heroxin.system.service.ISysMenuService;
+import com.heroxin.system.service.sys.ISysMenuService;
 
 /**
  * 登录验证

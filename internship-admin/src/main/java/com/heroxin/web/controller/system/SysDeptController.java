@@ -20,7 +20,7 @@ import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.domain.entity.SysDept;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.StringUtils;
-import com.heroxin.system.service.ISysDeptService;
+import com.heroxin.system.service.sys.ISysDeptService;
 
 /**
  * 部门信息

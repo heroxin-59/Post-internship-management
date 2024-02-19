@@ -20,7 +20,7 @@ import com.heroxin.common.core.domain.entity.SysDictType;
 import com.heroxin.common.core.page.TableDataInfo;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.poi.ExcelUtil;
-import com.heroxin.system.service.ISysDictTypeService;
+import com.heroxin.system.service.sys.ISysDictTypeService;
 
 /**
  * 数据字典信息

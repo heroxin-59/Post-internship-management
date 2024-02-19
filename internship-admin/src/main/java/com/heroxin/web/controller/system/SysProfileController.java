@@ -21,7 +21,7 @@ import com.heroxin.common.utils.StringUtils;
 import com.heroxin.common.utils.file.FileUploadUtils;
 import com.heroxin.common.utils.file.MimeTypeUtils;
 import com.heroxin.framework.web.service.TokenService;
-import com.heroxin.system.service.ISysUserService;
+import com.heroxin.system.service.sys.ISysUserService;
 
 /**
  * 个人信息 业务处理

@@ -12,7 +12,8 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         <!-- 配置默认的执行器.SIMPLE就是普通执行器;REUSE执行器会重用预处理语句(prepared statements);BATCH执行器将重用语句并执行批量更新 -->
         <setting name="defaultExecutorType"      value="SIMPLE" />
 		<!-- 指定 MyBatis 所用日志的具体实现 -->
-        <setting name="logImpl"                  value="SLF4J"  />
+        <setting name="logImpl"                  value="org.apache.ibatis.logging.stdout.StdOutImpl"  />
+<!--        <setting name="logImpl"                  value="SLF4J"  />-->
         <!-- 使用驼峰命名法转换字段 -->
 		<!-- <setting name="mapUnderscoreToCamelCase" value="true"/> -->
 	</settings>

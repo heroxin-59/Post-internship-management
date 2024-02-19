@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 import com.heroxin.common.core.domain.entity.SysRole;
 import com.heroxin.common.core.domain.entity.SysUser;
-import com.heroxin.system.service.ISysMenuService;
-import com.heroxin.system.service.ISysRoleService;
+import com.heroxin.system.service.sys.ISysMenuService;
+import com.heroxin.system.service.sys.ISysRoleService;
 
 /**
  * 用户权限处理

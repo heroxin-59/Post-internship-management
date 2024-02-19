@@ -17,8 +17,8 @@ import com.heroxin.common.core.page.TableDataInfo;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.poi.ExcelUtil;
 import com.heroxin.framework.web.service.SysPasswordService;
-import com.heroxin.system.domain.SysLogininfor;
-import com.heroxin.system.service.ISysLogininforService;
+import com.heroxin.system.domain.sys.SysLogininfor;
+import com.heroxin.system.service.sys.ISysLogininforService;
 
 /**
  * 系统访问记录

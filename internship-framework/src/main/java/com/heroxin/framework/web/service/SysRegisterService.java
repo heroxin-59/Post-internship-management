@@ -15,8 +15,8 @@ import com.heroxin.common.utils.MessageUtils;
 import com.heroxin.common.utils.SecurityUtils;
 import com.heroxin.common.utils.StringUtils;
 import com.heroxin.framework.manager.AsyncManager;
-import com.heroxin.system.service.ISysConfigService;
-import com.heroxin.system.service.ISysUserService;
+import com.heroxin.system.service.sys.ISysConfigService;
+import com.heroxin.system.service.sys.ISysUserService;
 
 /**
  * 注册校验方法

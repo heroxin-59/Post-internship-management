@@ -9,7 +9,7 @@ import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.domain.model.RegisterBody;
 import com.heroxin.common.utils.StringUtils;
 import com.heroxin.framework.web.service.SysRegisterService;
-import com.heroxin.system.service.ISysConfigService;
+import com.heroxin.system.service.sys.ISysConfigService;
 
 /**
  * 注册验证

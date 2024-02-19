@@ -19,8 +19,8 @@ import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.page.TableDataInfo;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.poi.ExcelUtil;
-import com.heroxin.system.domain.SysPost;
-import com.heroxin.system.service.ISysPostService;
+import com.heroxin.system.domain.sys.SysPost;
+import com.heroxin.system.service.sys.ISysPostService;
 
 /**
  * 岗位信息操作处理

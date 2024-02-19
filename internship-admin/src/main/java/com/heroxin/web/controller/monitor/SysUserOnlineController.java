@@ -20,8 +20,8 @@ import com.heroxin.common.core.page.TableDataInfo;
 import com.heroxin.common.core.redis.RedisCache;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.StringUtils;
-import com.heroxin.system.domain.SysUserOnline;
-import com.heroxin.system.service.ISysUserOnlineService;
+import com.heroxin.system.domain.sys.SysUserOnline;
+import com.heroxin.system.service.sys.ISysUserOnlineService;
 
 /**
  * 在线用户监控

@@ -19,7 +19,7 @@ import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.domain.entity.SysMenu;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.StringUtils;
-import com.heroxin.system.service.ISysMenuService;
+import com.heroxin.system.service.sys.ISysMenuService;
 
 /**
  * 菜单信息

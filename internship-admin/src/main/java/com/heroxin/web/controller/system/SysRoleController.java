@@ -26,10 +26,10 @@ import com.heroxin.common.utils.StringUtils;
 import com.heroxin.common.utils.poi.ExcelUtil;
 import com.heroxin.framework.web.service.SysPermissionService;
 import com.heroxin.framework.web.service.TokenService;
-import com.heroxin.system.domain.SysUserRole;
-import com.heroxin.system.service.ISysDeptService;
-import com.heroxin.system.service.ISysRoleService;
-import com.heroxin.system.service.ISysUserService;
+import com.heroxin.system.domain.sys.SysUserRole;
+import com.heroxin.system.service.sys.ISysDeptService;
+import com.heroxin.system.service.sys.ISysRoleService;
+import com.heroxin.system.service.sys.ISysUserService;
 
 /**
  * 角色信息

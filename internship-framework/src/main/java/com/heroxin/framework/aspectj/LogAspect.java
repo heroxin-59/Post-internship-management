@@ -28,7 +28,7 @@ import com.heroxin.common.utils.StringUtils;
 import com.heroxin.common.utils.ip.IpUtils;
 import com.heroxin.framework.manager.AsyncManager;
 import com.heroxin.framework.manager.factory.AsyncFactory;
-import com.heroxin.system.domain.SysOperLog;
+import com.heroxin.system.domain.sys.SysOperLog;
 
 /**
  * 操作日志记录处理

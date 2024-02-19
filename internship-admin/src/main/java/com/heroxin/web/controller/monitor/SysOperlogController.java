@@ -16,8 +16,8 @@ import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.page.TableDataInfo;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.poi.ExcelUtil;
-import com.heroxin.system.domain.SysOperLog;
-import com.heroxin.system.service.ISysOperLogService;
+import com.heroxin.system.domain.sys.SysOperLog;
+import com.heroxin.system.service.sys.ISysOperLogService;
 
 /**
  * 操作日志记录

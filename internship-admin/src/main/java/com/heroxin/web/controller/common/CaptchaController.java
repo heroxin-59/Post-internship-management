@@ -18,7 +18,7 @@ import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.redis.RedisCache;
 import com.heroxin.common.utils.sign.Base64;
 import com.heroxin.common.utils.uuid.IdUtils;
-import com.heroxin.system.service.ISysConfigService;
+import com.heroxin.system.service.sys.ISysConfigService;
 
 /**
  * 验证码操作处理

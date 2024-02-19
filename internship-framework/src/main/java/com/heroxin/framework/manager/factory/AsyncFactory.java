@@ -10,10 +10,10 @@ import com.heroxin.common.utils.StringUtils;
 import com.heroxin.common.utils.ip.AddressUtils;
 import com.heroxin.common.utils.ip.IpUtils;
 import com.heroxin.common.utils.spring.SpringUtils;
-import com.heroxin.system.domain.SysLogininfor;
-import com.heroxin.system.domain.SysOperLog;
-import com.heroxin.system.service.ISysLogininforService;
-import com.heroxin.system.service.ISysOperLogService;
+import com.heroxin.system.domain.sys.SysLogininfor;
+import com.heroxin.system.domain.sys.SysOperLog;
+import com.heroxin.system.service.sys.ISysLogininforService;
+import com.heroxin.system.service.sys.ISysOperLogService;
 import eu.bitwalker.useragentutils.UserAgent;
 
 /**

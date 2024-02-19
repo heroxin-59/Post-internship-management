@@ -13,7 +13,7 @@ import com.heroxin.common.enums.UserStatus;
 import com.heroxin.common.exception.ServiceException;
 import com.heroxin.common.utils.MessageUtils;
 import com.heroxin.common.utils.StringUtils;
-import com.heroxin.system.service.ISysUserService;
+import com.heroxin.system.service.sys.ISysUserService;
 
 /**
  * 用户验证处理

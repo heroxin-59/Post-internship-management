@@ -17,8 +17,8 @@ import com.heroxin.common.core.controller.BaseController;
 import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.page.TableDataInfo;
 import com.heroxin.common.enums.BusinessType;
-import com.heroxin.system.domain.SysNotice;
-import com.heroxin.system.service.ISysNoticeService;
+import com.heroxin.system.domain.sys.SysNotice;
+import com.heroxin.system.service.sys.ISysNoticeService;
 
 /**
  * 公告 信息操作处理

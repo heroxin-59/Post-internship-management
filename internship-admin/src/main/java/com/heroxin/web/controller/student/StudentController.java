@@ -11,14 +11,13 @@ package com.heroxin.web.controller.student;
 import com.heroxin.common.core.controller.BaseController;
 import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.core.page.TableDataInfo;
-import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.poi.ExcelUtil;
-import com.heroxin.system.domain.student.SysStudent;
-import com.heroxin.system.service.student.ISysStudentService;
+import com.heroxin.system.domain.SysStudent;
+import com.heroxin.system.service.ISysStudentService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;

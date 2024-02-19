@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.heroxin.common.constant.CacheConstants;
 import com.heroxin.common.core.domain.AjaxResult;
 import com.heroxin.common.utils.StringUtils;
-import com.heroxin.system.domain.SysCache;
+import com.heroxin.system.domain.sys.SysCache;
 
 /**
  * 缓存监控

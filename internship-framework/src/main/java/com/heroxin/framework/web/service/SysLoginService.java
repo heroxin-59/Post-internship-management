@@ -26,8 +26,8 @@ import com.heroxin.common.utils.ip.IpUtils;
 import com.heroxin.framework.manager.AsyncManager;
 import com.heroxin.framework.manager.factory.AsyncFactory;
 import com.heroxin.framework.security.context.AuthenticationContextHolder;
-import com.heroxin.system.service.ISysConfigService;
-import com.heroxin.system.service.ISysUserService;
+import com.heroxin.system.service.sys.ISysConfigService;
+import com.heroxin.system.service.sys.ISysUserService;
 
 /**
  * 登录校验方法

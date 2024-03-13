@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heroxin.system.mapper.internship.InternshipApplyMapper">
+    
+    <resultMap type="InternshipApply" id="InternshipApplyResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="applyDate"    column="apply_date"    />
+        <result property="reason"    column="reason"    />
+        <result property="companyId"    column="company_id"    />
+        <result property="companyName"    column="company_name"    />
+        <result property="duty"    column="duty"    />
+        <result property="content"    column="content"    />
+        <result property="teacherMemo"    column="teacher_memo"    />
+        <result property="yxMemo"    column="yx_memo"    />
+    </resultMap>
+
+    <sql id="selectInternshipApplyVo">
+        select id, name, apply_date, reason, company_id, company_name, duty, content, teacher_memo, yx_memo from internship_apply
+    </sql>
+
+    <select id="selectInternshipApplyList" parameterType="InternshipApply" resultMap="InternshipApplyResult">
+        <include refid="selectInternshipApplyVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="applyDate != null "> and apply_date = #{applyDate}</if>
+            <if test="reason != null  and reason != ''"> and reason = #{reason}</if>
+            <if test="companyId != null "> and company_id = #{companyId}</if>
+            <if test="companyName != null  and companyName != ''"> and company_name like concat('%', #{companyName}, '%')</if>
+            <if test="duty != null  and duty != ''"> and duty = #{duty}</if>
+            <if test="content != null  and content != ''"> and content = #{content}</if>
+            <if test="teacherMemo != null  and teacherMemo != ''"> and teacher_memo = #{teacherMemo}</if>
+            <if test="yxMemo != null  and yxMemo != ''"> and yx_memo = #{yxMemo}</if>
+        </where>
+    </select>
+    
+    <select id="selectInternshipApplyById" parameterType="Long" resultMap="InternshipApplyResult">
+        <include refid="selectInternshipApplyVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertInternshipApply" parameterType="InternshipApply">
+        insert into internship_apply
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">name,</if>
+            <if test="applyDate != null">apply_date,</if>
+            <if test="reason != null">reason,</if>
+            <if test="companyId != null">company_id,</if>
+            <if test="companyName != null">company_name,</if>
+            <if test="duty != null">duty,</if>
+            <if test="content != null">content,</if>
+            <if test="teacherMemo != null">teacher_memo,</if>
+            <if test="yxMemo != null">yx_memo,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="applyDate != null">#{applyDate},</if>
+            <if test="reason != null">#{reason},</if>
+            <if test="companyId != null">#{companyId},</if>
+            <if test="companyName != null">#{companyName},</if>
+            <if test="duty != null">#{duty},</if>
+            <if test="content != null">#{content},</if>
+            <if test="teacherMemo != null">#{teacherMemo},</if>
+            <if test="yxMemo != null">#{yxMemo},</if>
+         </trim>
+    </insert>
+
+    <update id="updateInternshipApply" parameterType="InternshipApply">
+        update internship_apply
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="applyDate != null">apply_date = #{applyDate},</if>
+            <if test="reason != null">reason = #{reason},</if>
+            <if test="companyId != null">company_id = #{companyId},</if>
+            <if test="companyName != null">company_name = #{companyName},</if>
+            <if test="duty != null">duty = #{duty},</if>
+            <if test="content != null">content = #{content},</if>
+            <if test="teacherMemo != null">teacher_memo = #{teacherMemo},</if>
+            <if test="yxMemo != null">yx_memo = #{yxMemo},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteInternshipApplyById" parameterType="Long">
+        delete from internship_apply where id = #{id}
+    </delete>
+
+    <delete id="deleteInternshipApplyByIds" parameterType="String">
+        delete from internship_apply where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

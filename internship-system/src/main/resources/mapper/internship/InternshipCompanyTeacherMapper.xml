@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heroxin.system.mapper.internship.InternshipCompanyTeacherMapper">
+    
+    <resultMap type="InternshipCompanyTeacher" id="InternshipCompanyTeacherResult">
+        <result property="id"    column="id"    />
+        <result property="name"    column="name"    />
+        <result property="companyId"    column="company_id"    />
+        <result property="duty"    column="duty"    />
+        <result property="sex"    column="sex"    />
+        <result property="birthday"    column="birthday"    />
+        <result property="tel"    column="tel"    />
+    </resultMap>
+
+    <sql id="selectInternshipCompanyTeacherVo">
+        select id, name, company_id, duty, sex, birthday, tel from internship_company_teacher
+    </sql>
+
+    <select id="selectInternshipCompanyTeacherList" parameterType="InternshipCompanyTeacher" resultMap="InternshipCompanyTeacherResult">
+        <include refid="selectInternshipCompanyTeacherVo"/>
+        <where>  
+            <if test="name != null  and name != ''"> and name like concat('%', #{name}, '%')</if>
+            <if test="companyId != null "> and company_id = #{companyId}</if>
+            <if test="duty != null  and duty != ''"> and duty = #{duty}</if>
+            <if test="sex != null  and sex != ''"> and sex = #{sex}</if>
+            <if test="birthday != null "> and birthday = #{birthday}</if>
+            <if test="tel != null  and tel != ''"> and tel = #{tel}</if>
+        </where>
+    </select>
+    
+    <select id="selectInternshipCompanyTeacherById" parameterType="Long" resultMap="InternshipCompanyTeacherResult">
+        <include refid="selectInternshipCompanyTeacherVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertInternshipCompanyTeacher" parameterType="InternshipCompanyTeacher">
+        insert into internship_company_teacher
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">id,</if>
+            <if test="name != null">name,</if>
+            <if test="companyId != null">company_id,</if>
+            <if test="duty != null">duty,</if>
+            <if test="sex != null">sex,</if>
+            <if test="birthday != null">birthday,</if>
+            <if test="tel != null">tel,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="name != null">#{name},</if>
+            <if test="companyId != null">#{companyId},</if>
+            <if test="duty != null">#{duty},</if>
+            <if test="sex != null">#{sex},</if>
+            <if test="birthday != null">#{birthday},</if>
+            <if test="tel != null">#{tel},</if>
+         </trim>
+    </insert>
+
+    <update id="updateInternshipCompanyTeacher" parameterType="InternshipCompanyTeacher">
+        update internship_company_teacher
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="name != null">name = #{name},</if>
+            <if test="companyId != null">company_id = #{companyId},</if>
+            <if test="duty != null">duty = #{duty},</if>
+            <if test="sex != null">sex = #{sex},</if>
+            <if test="birthday != null">birthday = #{birthday},</if>
+            <if test="tel != null">tel = #{tel},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteInternshipCompanyTeacherById" parameterType="Long">
+        delete from internship_company_teacher where id = #{id}
+    </delete>
+
+    <delete id="deleteInternshipCompanyTeacherByIds" parameterType="String">
+        delete from internship_company_teacher where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

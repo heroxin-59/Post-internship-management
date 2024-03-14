@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heroxin.internship.mapper.InternshipDailyMapper">
+
+    <resultMap type="InternshipDaily" id="InternshipDailyResult">
+        <result property="id" column="id"/>
+        <result property="student" column="student"/>
+        <result property="company" column="company"/>
+        <result property="dailyDate" column="daily_date"/>
+        <result property="onTime" column="on_time"/>
+        <result property="offTime" column="off_time"/>
+    </resultMap>
+
+    <sql id="selectInternshipDailyVo">
+        select id, student, company, daily_date, on_time, off_time
+        from internship_daily
+    </sql>
+
+    <select id="selectInternshipDailyList" parameterType="InternshipDaily" resultMap="InternshipDailyResult">
+        <include refid="selectInternshipDailyVo"/>
+        <where>
+            <if test="student != null  and student != ''">and student like concat('%', #{student}, '%')</if>
+            <if test="company != null  and company != ''">and company like concat('%', #{company}, '%')</if>
+            <if test="dailyDate != null ">and daily_date = #{dailyDate}</if>
+            <if test="onTime != null ">and on_time = #{onTime}</if>
+            <if test="offTime != null ">and off_time = #{offTime}</if>
+        </where>
+    </select>
+
+    <select id="selectInternshipDailyById" parameterType="Long" resultMap="InternshipDailyResult">
+        <include refid="selectInternshipDailyVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertInternshipDaily" parameterType="InternshipDaily" useGeneratedKeys="true" keyProperty="id">
+        insert into internship_daily
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="student != null">student,</if>
+            <if test="company != null">company,</if>
+            <if test="dailyDate != null">daily_date,</if>
+            <if test="onTime != null">on_time,</if>
+            <if test="offTime != null">off_time,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="student != null">#{student},</if>
+            <if test="company != null">#{company},</if>
+            <if test="dailyDate != null">#{dailyDate},</if>
+            <if test="onTime != null">#{onTime},</if>
+            <if test="offTime != null">#{offTime},</if>
+        </trim>
+    </insert>
+
+    <update id="updateInternshipDaily" parameterType="InternshipDaily">
+        update internship_daily
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="student != null">student = #{student},</if>
+            <if test="company != null">company = #{company},</if>
+            <if test="dailyDate != null">daily_date = #{dailyDate},</if>
+            <if test="onTime != null">on_time = #{onTime},</if>
+            <if test="offTime != null">off_time = #{offTime},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteInternshipDailyById" parameterType="Long">
+        delete
+        from internship_daily
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteInternshipDailyByIds" parameterType="String">
+        delete from internship_daily where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

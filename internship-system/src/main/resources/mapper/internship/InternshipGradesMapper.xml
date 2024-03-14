@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heroxin.internship.mapper.InternshipGradesMapper">
+
+    <resultMap type="InternshipGrades" id="InternshipGradesResult">
+        <result property="id" column="id"/>
+        <result property="code" column="code"/>
+        <result property="student" column="student"/>
+        <result property="teachet" column="teachet"/>
+        <result property="companyTeacher" column="company_teacher"/>
+        <result property="company" column="company"/>
+        <result property="cq1Grages" column="cq1_grages"/>
+        <result property="at1Grades" column="at1_grades"/>
+        <result property="log1Grades" column="log1_grades"/>
+        <result property="team1Grades" column="team1_grades"/>
+        <result property="score" column="score"/>
+        <result property="cq2Grades" column="cq2_grades"/>
+        <result property="at2Grades" column="at2_grades"/>
+        <result property="log2Grades" column="log2_grades"/>
+        <result property="team2Grades" column="team2_grades"/>
+        <result property="score1" column="score1"/>
+        <result property="totalScore" column="total_score"/>
+    </resultMap>
+
+    <sql id="selectInternshipGradesVo">
+        select id,
+               code,
+               student,
+               teachet,
+               company_teacher,
+               company,
+               cq1_grages,
+               at1_grades,
+               log1_grades,
+               team1_grades,
+               score,
+               cq2_grades,
+               at2_grades,
+               log2_grades,
+               team2_grades,
+               score1,
+               total_score
+        from internship_grades
+    </sql>
+
+    <select id="selectInternshipGradesList" parameterType="InternshipGrades" resultMap="InternshipGradesResult">
+        <include refid="selectInternshipGradesVo"/>
+        <where>
+            <if test="code != null  and code != ''">and code = #{code}</if>
+            <if test="student != null  and student != ''">and student = #{student}</if>
+            <if test="teachet != null  and teachet != ''">and teachet = #{teachet}</if>
+            <if test="companyTeacher != null  and companyTeacher != ''">and company_teacher = #{companyTeacher}</if>
+            <if test="company != null  and company != ''">and company = #{company}</if>
+            <if test="cq1Grages != null  and cq1Grages != ''">and cq1_grages = #{cq1Grages}</if>
+            <if test="at1Grades != null  and at1Grades != ''">and at1_grades = #{at1Grades}</if>
+            <if test="log1Grades != null  and log1Grades != ''">and log1_grades = #{log1Grades}</if>
+            <if test="team1Grades != null  and team1Grades != ''">and team1_grades = #{team1Grades}</if>
+            <if test="score != null  and score != ''">and score = #{score}</if>
+            <if test="cq2Grades != null  and cq2Grades != ''">and cq2_grades = #{cq2Grades}</if>
+            <if test="at2Grades != null  and at2Grades != ''">and at2_grades = #{at2Grades}</if>
+            <if test="log2Grades != null  and log2Grades != ''">and log2_grades = #{log2Grades}</if>
+            <if test="team2Grades != null  and team2Grades != ''">and team2_grades = #{team2Grades}</if>
+            <if test="score1 != null  and score1 != ''">and score1 = #{score1}</if>
+            <if test="totalScore != null  and totalScore != ''">and total_score = #{totalScore}</if>
+        </where>
+    </select>
+
+    <select id="selectInternshipGradesById" parameterType="Long" resultMap="InternshipGradesResult">
+        <include refid="selectInternshipGradesVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertInternshipGrades" parameterType="InternshipGrades" useGeneratedKeys="true" keyProperty="id">
+        insert into internship_grades
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="code != null">code,</if>
+            <if test="student != null">student,</if>
+            <if test="teachet != null">teachet,</if>
+            <if test="companyTeacher != null">company_teacher,</if>
+            <if test="company != null">company,</if>
+            <if test="cq1Grages != null">cq1_grages,</if>
+            <if test="at1Grades != null">at1_grades,</if>
+            <if test="log1Grades != null">log1_grades,</if>
+            <if test="team1Grades != null">team1_grades,</if>
+            <if test="score != null">score,</if>
+            <if test="cq2Grades != null">cq2_grades,</if>
+            <if test="at2Grades != null">at2_grades,</if>
+            <if test="log2Grades != null">log2_grades,</if>
+            <if test="team2Grades != null">team2_grades,</if>
+            <if test="score1 != null">score1,</if>
+            <if test="totalScore != null">total_score,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="code != null">#{code},</if>
+            <if test="student != null">#{student},</if>
+            <if test="teachet != null">#{teachet},</if>
+            <if test="companyTeacher != null">#{companyTeacher},</if>
+            <if test="company != null">#{company},</if>
+            <if test="cq1Grages != null">#{cq1Grages},</if>
+            <if test="at1Grades != null">#{at1Grades},</if>
+            <if test="log1Grades != null">#{log1Grades},</if>
+            <if test="team1Grades != null">#{team1Grades},</if>
+            <if test="score != null">#{score},</if>
+            <if test="cq2Grades != null">#{cq2Grades},</if>
+            <if test="at2Grades != null">#{at2Grades},</if>
+            <if test="log2Grades != null">#{log2Grades},</if>
+            <if test="team2Grades != null">#{team2Grades},</if>
+            <if test="score1 != null">#{score1},</if>
+            <if test="totalScore != null">#{totalScore},</if>
+        </trim>
+    </insert>
+
+    <update id="updateInternshipGrades" parameterType="InternshipGrades">
+        update internship_grades
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="code != null">code = #{code},</if>
+            <if test="student != null">student = #{student},</if>
+            <if test="teachet != null">teachet = #{teachet},</if>
+            <if test="companyTeacher != null">company_teacher = #{companyTeacher},</if>
+            <if test="company != null">company = #{company},</if>
+            <if test="cq1Grages != null">cq1_grages = #{cq1Grages},</if>
+            <if test="at1Grades != null">at1_grades = #{at1Grades},</if>
+            <if test="log1Grades != null">log1_grades = #{log1Grades},</if>
+            <if test="team1Grades != null">team1_grades = #{team1Grades},</if>
+            <if test="score != null">score = #{score},</if>
+            <if test="cq2Grades != null">cq2_grades = #{cq2Grades},</if>
+            <if test="at2Grades != null">at2_grades = #{at2Grades},</if>
+            <if test="log2Grades != null">log2_grades = #{log2Grades},</if>
+            <if test="team2Grades != null">team2_grades = #{team2Grades},</if>
+            <if test="score1 != null">score1 = #{score1},</if>
+            <if test="totalScore != null">total_score = #{totalScore},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteInternshipGradesById" parameterType="Long">
+        delete
+        from internship_grades
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteInternshipGradesByIds" parameterType="String">
+        delete from internship_grades where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heroxin.internship.mapper.InternshipInformationMapper">
+
+    <resultMap type="InternshipInformation" id="InternshipInformationResult">
+        <result property="id" column="id"/>
+        <result property="company" column="company"/>
+        <result property="duty" column="duty"/>
+        <result property="major" column="major"/>
+        <result property="workContent" column="work_content"/>
+        <result property="startDate" column="start_date"/>
+        <result property="endDate" column="end_date"/>
+        <result property="contract" column="contract"/>
+        <result property="remark" column="remark"/>
+    </resultMap>
+
+    <sql id="selectInternshipInformationVo">
+        select id,
+               company,
+               duty,
+               major,
+               work_content,
+               start_date,
+               end_date,
+               contract,
+               remark
+        from internship_information
+    </sql>
+
+    <select id="selectInternshipInformationList" parameterType="InternshipInformation"
+            resultMap="InternshipInformationResult">
+        <include refid="selectInternshipInformationVo"/>
+        <where>
+            <if test="company != null  and company != ''">and company = #{company}</if>
+            <if test="duty != null  and duty != ''">and duty = #{duty}</if>
+            <if test="major != null  and major != ''">and major = #{major}</if>
+            <if test="workContent != null  and workContent != ''">and work_content = #{workContent}</if>
+            <if test="startDate != null ">and start_date = #{startDate}</if>
+            <if test="endDate != null ">and end_date = #{endDate}</if>
+            <if test="contract != null  and contract != ''">and contract = #{contract}</if>
+        </where>
+    </select>
+
+    <select id="selectInternshipInformationById" parameterType="Long" resultMap="InternshipInformationResult">
+        <include refid="selectInternshipInformationVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertInternshipInformation" parameterType="InternshipInformation" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into internship_information
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="company != null">company,</if>
+            <if test="duty != null">duty,</if>
+            <if test="major != null">major,</if>
+            <if test="workContent != null">work_content,</if>
+            <if test="startDate != null">start_date,</if>
+            <if test="endDate != null">end_date,</if>
+            <if test="contract != null">contract,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="company != null">#{company},</if>
+            <if test="duty != null">#{duty},</if>
+            <if test="major != null">#{major},</if>
+            <if test="workContent != null">#{workContent},</if>
+            <if test="startDate != null">#{startDate},</if>
+            <if test="endDate != null">#{endDate},</if>
+            <if test="contract != null">#{contract},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </insert>
+
+    <update id="updateInternshipInformation" parameterType="InternshipInformation">
+        update internship_information
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="company != null">company = #{company},</if>
+            <if test="duty != null">duty = #{duty},</if>
+            <if test="major != null">major = #{major},</if>
+            <if test="workContent != null">work_content = #{workContent},</if>
+            <if test="startDate != null">start_date = #{startDate},</if>
+            <if test="endDate != null">end_date = #{endDate},</if>
+            <if test="contract != null">contract = #{contract},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteInternshipInformationById" parameterType="Long">
+        delete
+        from internship_information
+        where id = #{id}
+    </delete>
+
+    <delete id="deleteInternshipInformationByIds" parameterType="String">
+        delete from internship_information where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

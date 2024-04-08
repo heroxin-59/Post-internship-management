@@ -3,6 +3,7 @@ package com.heroxin.web.controller.student;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
+import com.heroxin.common.utils.SecurityUtils;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -41,6 +42,9 @@ public class StudentDailyLogController extends BaseController {
     @GetMapping("/list")
     public TableDataInfo list(InternshipDailyLog internshipDailyLog) {
         startPage();
+        if (!"admin".equals(SecurityUtils.getUsername())) {
+            internshipDailyLog.setStudent(SecurityUtils.getUsername());
+        }
         List<InternshipDailyLog> list = internshipDailyLogService.selectInternshipDailyLogList(internshipDailyLog);
         return getDataTable(list);
     }

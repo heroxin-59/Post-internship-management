@@ -3,6 +3,7 @@ package com.heroxin.web.controller.student;
 import java.util.List;
 import javax.servlet.http.HttpServletResponse;
 
+import com.heroxin.common.utils.SecurityUtils;
 import com.heroxin.common.utils.poi.ExcelUtil;
 import com.heroxin.internship.domain.InternshipApply;
 import com.heroxin.internship.service.IInternshipApplyService;
@@ -41,6 +42,9 @@ public class StudentApplyController extends BaseController {
     @GetMapping("/list")
     public TableDataInfo list(InternshipApply internshipApply) {
         startPage();
+        if (!"admin".equals(SecurityUtils.getUsername())) {
+            internshipApply.setName(SecurityUtils.getUsername());
+        }
         List<InternshipApply> list = internshipApplyService.selectInternshipApplyList(internshipApply);
         return getDataTable(list);
     }

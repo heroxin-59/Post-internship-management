@@ -1,12 +1,15 @@
 package com.heroxin.common.core.domain.model;
 
+import lombok.Data;
+
 /**
- * 用户登录对象
- * 
- * @author ruoyi
+ * @Author lixin
+ * @Create 2024-04-10-09:44
+ * @ClassName LoginBody
+ * @Description:
  */
-public class LoginBody
-{
+@Data
+public class LoginBody {
     /**
      * 用户名
      */
@@ -26,44 +29,4 @@ public class LoginBody
      * 唯一标识
      */
     private String uuid;
-
-    public String getUsername()
-    {
-        return username;
-    }
-
-    public void setUsername(String username)
-    {
-        this.username = username;
-    }
-
-    public String getPassword()
-    {
-        return password;
-    }
-
-    public void setPassword(String password)
-    {
-        this.password = password;
-    }
-
-    public String getCode()
-    {
-        return code;
-    }
-
-    public void setCode(String code)
-    {
-        this.code = code;
-    }
-
-    public String getUuid()
-    {
-        return uuid;
-    }
-
-    public void setUuid(String uuid)
-    {
-        this.uuid = uuid;
-    }
 }

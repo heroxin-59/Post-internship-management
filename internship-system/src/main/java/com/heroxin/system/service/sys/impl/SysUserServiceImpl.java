@@ -70,6 +70,9 @@ public class SysUserServiceImpl implements ISysUserService {
     @Override
     @DataScope(deptAlias = "d", userAlias = "u")
     public List<SysUser> selectUserList(SysUser user) {
+        System.out.println("=====================");
+        System.out.println(user.getRemark());
+        System.out.println("=====================");
         return userMapper.selectUserList(user);
     }
 

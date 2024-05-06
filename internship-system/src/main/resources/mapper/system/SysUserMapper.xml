@@ -63,6 +63,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<if test="userId != null and userId != 0">
 			AND u.user_id = #{userId}
 		</if>
+		<if test="remark != null and remark != ''">
+			AND u.remark like concat('%', #{remark}, '%')
+		</if>
 		<if test="userName != null and userName != ''">
 			AND u.user_name like concat('%', #{userName}, '%')
 		</if>

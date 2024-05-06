@@ -8,15 +8,12 @@ import com.heroxin.common.core.domain.entity.SysDept;
 import com.heroxin.common.enums.BusinessType;
 import com.heroxin.common.utils.StringUtils;
 import com.heroxin.system.service.sys.ISysDeptService;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**

@@ -55,6 +55,7 @@ public class CollegeStudentController extends BaseController
     public TableDataInfo list(SysUser user)
     {
         startPage();
+        user.setRemark("实习生");
         List<SysUser> list = userService.selectUserList(user);
         return getDataTable(list);
     }

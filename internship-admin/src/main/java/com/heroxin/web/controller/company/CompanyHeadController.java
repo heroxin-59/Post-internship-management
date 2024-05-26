@@ -53,9 +53,10 @@ public class CompanyHeadController extends BaseController {
     @GetMapping("/list")
     public TableDataInfo list(SysUser user) {
         startPage();
-        if (!"admin".equals(SecurityUtils.getUsername())) {
+/*        if (!"admin".equals(SecurityUtils.getUsername())) {
             user.setUserName(SecurityUtils.getUsername());
-        }
+        }*/
+        user.setRemark("实习单位负责人");
         List<SysUser> list = userService.selectUserList(user);
         return getDataTable(list);
     }
